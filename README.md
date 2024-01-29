@@ -10,12 +10,12 @@ Before running the script, you need to obtain an API key from AviationStack. You
 
 1. Clone this repository to your local machine:
 ```bash
-      git clone https://github.com/yourusername/flight-info-retriever.git
+      git clone https://github.com/Jawabreh0/Flight-Info-Retriver.git
 ```
 
 2. Navigate to the repository directory:
 ```bash
-      cd flight-info-retriever
+      cd Flight-Info-Retriver
 ```
 
 3. Install the required Python libraries (requests):
@@ -25,7 +25,7 @@ Before running the script, you need to obtain an API key from AviationStack. You
 
 ## Usage
 
-1. Open the flight_info_retriever.py file in a text editor.
+1. Open the main.py file in a text editor.
 
 2. Replace "YOUR_KEY_HERE" in the main() function with your AviationStack API key.
 
