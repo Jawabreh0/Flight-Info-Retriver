@@ -1,8 +1,8 @@
 import requests
 
 class FlightInfoRetriever:
-    def __init__(self, api_key):
-        self.api_key = api_key
+    def __init__(self, aviation_stack_api_key):
+        self.aviation_stack_api_key = aviation_stack_api_key
         self.base_url = "http://api.aviationstack.com/v1/flights"
 
     def get_user_input(self):
@@ -12,7 +12,7 @@ class FlightInfoRetriever:
         return origin_city, destination_city, date
 
     def retrieve_scheduled_flights(self, origin_city, destination_city, date):
-        url = f"{self.base_url}?access_key={self.api_key}&search=1&dep_iata={origin_city}&arr_iata={destination_city}&flight_iata=&flight_icao=&date={date}"
+        url = f"{self.base_url}?access_key={self.aviation_stack_api_key}&search=1&dep_iata={origin_city}&arr_iata={destination_city}&flight_iata=&flight_icao=&date={date}"
 
         try:
             response = requests.get(url)
@@ -50,8 +50,8 @@ class FlightInfoRetriever:
             print("---------")
 
 def main():
-    api_key = "YOUR_KEY_HERE"
-    flight_retriever = FlightInfoRetriever(api_key)
+    aviation_stack_api_key = "YOUR_KEY_HERE"
+    flight_retriever = FlightInfoRetriever(aviation_stack_api_key)
 
     origin_city, destination_city, date = flight_retriever.get_user_input()
     flight_retriever.retrieve_scheduled_flights(origin_city, destination_city, date)
